@@ -2,7 +2,7 @@ import React from 'react'
 import { HiChevronLeft } from "react-icons/hi"
 const Return = () => {
   return (
-    <div className='p-5 bg-primary flex justify-between items-center'>
+    <div className='px-5 py-3 bg-primary flex justify-between items-center'>
         <div>
             <HiChevronLeft size={24} color='white' className='cursor-pointer'/>
         </div>
