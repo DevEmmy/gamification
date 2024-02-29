@@ -25,21 +25,20 @@ const WheelGame = () => {
         },
 
     ]
-    const [won, setWon] = useState()
-    const [play, setPlay] = useState(false);
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState(0); // Initial selected option is 0 (first slice)
 
+    const [stake, setStake] = useState(0)
+    const [won, setWon] = useState(false)
+    const [amountWon, setAmountWon] = useState(0)
 
-    const startRotation = () => {
-        setPlay(true);
-
-        setTimeout(() => {
-            setPlay(false)
-        }, Math.floor(Math.random() * 10000 + 1))
-    }
 
     const handleSpinFinish = (result) => {
-        console.log(`Spun to: ${result}`);
+        if(result.length == 2 && result[0] == selectedOdd){
+            setWon(true)
+            setAmountWon()
+        }
+        else{
+            setWon(false)
+        }
         handleConfetti()
         // Handle the result as needed
     };
