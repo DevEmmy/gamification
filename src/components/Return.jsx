@@ -1,6 +1,6 @@
 import React from 'react'
 import { HiChevronLeft } from "react-icons/hi"
-const Return = () => {
+const Return = ({amount}) => {
   return (
     <div className='px-5 py-3 bg-primary flex justify-between items-center'>
         <div>
@@ -8,7 +8,7 @@ const Return = () => {
         </div>
 
         <div>
-            <p className='text-white font-semibold text-[24px]'>₦ 8000</p>
+            <p className='text-white font-semibold text-[24px]'>₦{amount}</p>
         </div>
     </div>
   )

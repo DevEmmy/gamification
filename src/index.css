@@ -153,7 +153,8 @@ li{
 }
 
 .dark__bg{
-  @apply bg-[rgba(0,0,0,0.8)] absolute top-0 left-0 min-h-[100vh] w-full
+  @apply bg-[rgba(0,0,0,0.8)] absolute top-0 left-0 min-h-[100vh] w-full z-30
+  overflow-y-hidden
 }
 
 .ex-bg{
@@ -174,4 +175,11 @@ li{
   100% {
     transform: scale(1);
   }
+}
+
+.centered-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
