@@ -43,7 +43,7 @@ const Overlay = ({ setShow, status = 0, oddWon, amountWon }) => {
         <div className=''>
           <div className='dark__bg' />
 
-          <div className='flex flex-col top-[10vh] justify-center text-center centered-div font-bold drop-shadow-2xl px-items-center bg-black shadow-3xl text-white z-50 py-12 px-5 w-4/5 rounded-lg gap-3 border-2 border-primary'>
+          <div className='flex flex-col top-[10vh] justify-center text-center centered-div font-bold drop-shadow-2xl px-items-center bg-black shadow-3xl text-white z-50 py-12 px-5 w-4/5 rounded-3xl gap-3 border-2 border-primary'>
             <div>
               <h2 className='text-2xl'>You Won</h2>
               <p>Congratulations, you got <span>+₦{amountWon}</span></p>
