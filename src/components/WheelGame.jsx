@@ -196,7 +196,7 @@ const WheelGame = () => {
 
                 {
                     Insufficient &&
-                    <p className='text-red-600 text-[14px]'>Insufficient Balance</p>
+                    <p className='text-red-400 font-semibold text-[14px]'>Insufficient Balance</p>
                 }
 
                 <div className="grid grid-cols-4 gap-2 rounded-3xl my-5 p-3 bg-gray-700 border border-gray-100">
