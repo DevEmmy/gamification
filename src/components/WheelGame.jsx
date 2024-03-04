@@ -15,22 +15,22 @@ const WheelGame = () => {
     const [Insufficient, setInsufficient] = useState(false)
 
     const data = [
-        { option: '2x', segColor: '#82D7A7' },
-        { option: '4x', segColor: '#82D7A7' },
-        { option: '6x', segColor: "#82D7A7" },
-        { option: '8x', segColor: '#82D7A7' },
-        { option: '10x', segColor: '#82D7A7' },
-        { option: '12x', segColor: '#82D7A7' },
-        { option: '14x', segColor: '#82D7A7' },
-        { option: '16x', segColor: '#82D7A7' },
+        { option: '2x', segColor: '#9EF4C3' },
+        { option: '4x', segColor: '#9EF4C3' },
+        { option: '6x', segColor: "#9EF4C3" },
+        { option: '8x', segColor: '#9EF4C3' },
+        { option: '10x', segColor: '#9EF4C3' },
+        { option: '12x', segColor: '#9EF4C3' },
+        { option: '14x', segColor: '#9EF4C3' },
+        { option: '16x', segColor: '#9EF4C3' },
     ]
 
     const [balance, setBalance] = useState(8000)
     const segments = [
-        { option: '2x', segColor: '#82D7A7' },
-        { option: '4x', segColor: '#82D7A7' },
-        { option: '6x', segColor: "#82D7A7" },
-        { option: '8x', segColor: '#82D7A7' },
+        { option: '2x', segColor: '#9EF4C3' },
+        { option: '4x', segColor: '#9EF4C3' },
+        { option: '6x', segColor: "#9EF4C3" },
+        { option: '8x', segColor: '#9EF4C3' },
         // Add more segments as needed
     ];
 
@@ -160,15 +160,16 @@ const WheelGame = () => {
                         mustStartSpinning={mustSpin}
                         prizeNumber={prizeNumber}
                         data={data}
-                        outerBorderColor="#82D7A7"
-                        backgroundColors={["#82D7A7", "white"]}
+                        outerBorderColor="#9EF4C3"
+                        backgroundColors={["#9EF4C3", "white"]}
                         radiusLineWidth={"1"}
                         onStopSpinning={() => {
                             setMustSpin(false);
                         }}
-                        fontSize={"26"}
+                        fontSize={"30"}
                         innerBorderColor={"red"}
                         disableInitialAnimation={"true"}
+                        textColors={["#2F855A"]}
                     />
                     </div>
 
