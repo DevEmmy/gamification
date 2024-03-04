@@ -15,22 +15,22 @@ const WheelGame = () => {
     const [Insufficient, setInsufficient] = useState(false)
 
     const data = [
-        { option: '2x', segColor: '#2F855A' },
-        { option: '4x', segColor: '#2F855A' },
-        { option: '6x', segColor: "#2F855A" },
-        { option: '8x', segColor: '#2F855A' },
-        { option: '10x', segColor: '#2F855A' },
-        { option: '12x', segColor: '#2F855A' },
-        { option: '14x', segColor: '#2F855A' },
-        { option: '16x', segColor: '#2F855A' },
+        { option: '2x', segColor: '#82D7A7' },
+        { option: '4x', segColor: '#82D7A7' },
+        { option: '6x', segColor: "#82D7A7" },
+        { option: '8x', segColor: '#82D7A7' },
+        { option: '10x', segColor: '#82D7A7' },
+        { option: '12x', segColor: '#82D7A7' },
+        { option: '14x', segColor: '#82D7A7' },
+        { option: '16x', segColor: '#82D7A7' },
     ]
 
     const [balance, setBalance] = useState(8000)
     const segments = [
-        { option: '2x', segColor: '#2F855A' },
-        { option: '4x', segColor: '#2F855A' },
-        { option: '6x', segColor: "#2F855A" },
-        { option: '8x', segColor: '#2F855A' },
+        { option: '2x', segColor: '#82D7A7' },
+        { option: '4x', segColor: '#82D7A7' },
+        { option: '6x', segColor: "#82D7A7" },
+        { option: '8x', segColor: '#82D7A7' },
         // Add more segments as needed
     ];
 
@@ -122,7 +122,7 @@ const WheelGame = () => {
 
 
     return (
-        <div className='bg-gray-800 min-h-[100vh]'>
+        <div className='bg-[#2F855A] min-h-[100vh]'>
             <Return amount={balance}/>
             {won}
 
@@ -151,25 +151,32 @@ const WheelGame = () => {
 
                 <h2 className={`text-white text-center p-3 text-[24px] font-semibold ${!show ? "pulsate" : ""}`}>Wheel of Fortune</h2>
 
-                <div className='md:px-[5%]'>
+                <div className='md:px-[5%] layer'>
                     {/* <SpinWheel {...spinWheelProps} />; */}
+
+                    {/* <img src="https://static.vecteezy.com/system/resources/thumbnails/010/862/341/small/3d-blank-black-golden-podium-stand-display-minimalist-pedestal-or-showcase-scene-for-present-product-and-mock-up-png.png" alt="" className='absolute -bottom-16 x1'/> */}
+                    <div className='absolute top-0 centered-div '>
                     <Wheel
                         mustStartSpinning={mustSpin}
                         prizeNumber={prizeNumber}
                         data={data}
-                        outerBorderColor="#2F855A"
-                        backgroundColors={["#2F855A", "white"]}
+                        outerBorderColor="#82D7A7"
+                        backgroundColors={["#82D7A7", "white"]}
                         radiusLineWidth={"1"}
                         onStopSpinning={() => {
                             setMustSpin(false);
                         }}
+                        fontSize={"26"}
+                        innerBorderColor={"red"}
+                        disableInitialAnimation={"true"}
                     />
+                    </div>
 
                 </div>
 
-                <div className='flex text-white w-2/5 border border-primary p-3 gap-3 rounded-lg items-center justify-center'>
-                    <p>Bet</p>
-                    <input type="number" className='w-full bg-transparent font-bold text-primary  focus:outline-none' value={stake} onChange={(e) => { setStake(e.target.value);
+                <div className='flex text-white w-2/5 border-4 border-white p-3 gap-3 rounded-lg items-center justify-center mt-10'>
+                    <p>Stake: </p>
+                    <input type="number" className='w-full bg-transparent font-bold text-white  focus:outline-none' value={stake} onChange={(e) => { setStake(e.target.value);
                         if(e.target.value > balance){
                             setInsufficient(true)
                         }
@@ -196,7 +203,10 @@ const WheelGame = () => {
                     }
                 </div>
 
-                <button className='bg-primary p-3 rounded-lg text-white w-2/3 mb-20' onClick={handleSpinClick}>SPIN</button>
+                <button className=' w-2/3 mb-20 big-button' onClick={handleSpinClick}>
+                    <span>Spin</span>
+                </button>
+
 
             </div>
         </div>
