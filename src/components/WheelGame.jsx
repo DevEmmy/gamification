@@ -5,8 +5,11 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import Overlay from './Overlay';
 import { Wheel } from 'react-custom-roulette'
+import toast, { Toaster } from 'react-hot-toast';
 
 const WheelGame = () => {
+
+    const notify = () => toast.error('Kindly stake an amount');
 
     const [stake, setStake] = useState()
     const [won, setWon] = useState(false)
@@ -90,6 +93,10 @@ const WheelGame = () => {
     }, [show])
 
     const handleSpinClick = () => {
+        if ((stake == null) || (stake == 0)){
+            notify()
+            setMustSpin(false)
+        }
         if (!mustSpin && (balance >= stake)) {
 
             setBalance(balance - stake);
@@ -178,7 +185,7 @@ const WheelGame = () => {
                 <div className='flex text-white w-2/5 border-4 border-white p-3 gap-3 rounded-lg items-center justify-center mt-10'>
                     <p>Stake: </p>
                     <input type="number" className='w-full bg-transparent font-bold text-white  focus:outline-none' value={stake} onChange={(e) => { setStake(e.target.value);
-                        if(e.target.value > balance){
+                        if(e.target.value > balance || e.target.value <= 0){
                             setInsufficient(true)
                         }
                         else{
@@ -204,12 +211,14 @@ const WheelGame = () => {
                     }
                 </div>
 
-                <button className=' w-2/3 mb-20 big-button' onClick={handleSpinClick}>
+                <button className=' w-2/3 mb-20 big-button' onClick={handleSpinClick} disabled={Insufficient}>
                     <span>Spin</span>
                 </button>
 
 
             </div>
+
+            <Toaster />
         </div>
     )
 }

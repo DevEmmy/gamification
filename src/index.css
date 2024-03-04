@@ -199,7 +199,7 @@ li{
 }
 
 
-button {
+.big-button {
 	cursor: pointer;
 	position: relative;
 	/* padding: 2.5rem 7.5rem; */
@@ -224,7 +224,8 @@ button {
 .x1{
   /* z-index: ; */
 }
-button span {
+
+.big-button span {
 	color: transparent;
 	background-image: linear-gradient(0deg, #82D7A7 0%, #FEFAFD 100%);
 	-webkit-background-clip: text;
@@ -232,7 +233,7 @@ button span {
 	filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
 }
 
-button::before {
+.big-button::before {
 	content: "";
 	display: block;
 	height: 0.25rem;
@@ -248,7 +249,7 @@ button::before {
 	background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
 }
 
-button::after {
+.big-button::after {
 	content: "";
 	display: block;
 	height: 0.25rem;
