@@ -7,7 +7,7 @@ const Wheel = ({ play = false, setWon }) => {
         '6x', 'Free Spin',
         '8x', 'Free Spin',
         '10x', 'Free Spin',
-        '12x', 'Free Spin'
+        '12x', 'Free Spin',
     ];
 
     const [rotation, setRotation] = useState(0); // State to track rotation angle after spin
