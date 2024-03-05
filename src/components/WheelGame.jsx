@@ -156,20 +156,19 @@ const WheelGame = () => {
 
 
 
-                <h2 className={`text-white text-center p-3 text-[24px] font-semibold ${!show ? "pulsate" : ""}`}>Wheel of Fortune</h2>
+                {/* <h2 className={`text-white text-center text-[24px] font-semibold ${!show ? "pulsate" : ""} shi`}>spin the wheel</h2> */}
 
-                <div className='md:px-[5%] layer'>
-                    {/* <SpinWheel {...spinWheelProps} />; */}
-
-                    {/* <img src="https://static.vecteezy.com/system/resources/thumbnails/010/862/341/small/3d-blank-black-golden-podium-stand-display-minimalist-pedestal-or-showcase-scene-for-present-product-and-mock-up-png.png" alt="" className='absolute -bottom-16 x1'/> */}
-                    <div className='absolute top-0 centered-div '>
+                {/* <div className='md:px-[5%] layer'> */}
+                    
+                    <div className=''>
                     <Wheel
                         mustStartSpinning={mustSpin}
                         prizeNumber={prizeNumber}
                         data={data}
                         outerBorderColor="#9EF4C3"
                         backgroundColors={["#9EF4C3", "white"]}
-                        radiusLineWidth={"1"}
+                        // radiusLineWidth={"1"}
+                        // spinDuration={[0.2]}
                         onStopSpinning={() => {
                             setMustSpin(false);
                         }}
@@ -177,12 +176,30 @@ const WheelGame = () => {
                         innerBorderColor={"red"}
                         disableInitialAnimation={"true"}
                         textColors={["#2F855A"]}
+                        // outerBorderColor={["rgb(250, 20, 100)"]}
+                        outerBorderWidth={[15]}
+                        //   innerBorderColor={["#f2f2f2"]}
+                        radiusLineColor={["tranparent"]}
+                        radiusLineWidth={[1]}
+                        //   textColors={["#f5f5f5"]}
                     />
                     </div>
 
+                {/* </div> */}
+
+                <div className="grid grid-cols-4 gap-2 rounded-3xl my-5 p-3 bg-gray-700 border border-gray-100">
+                    {
+                        odds.map((odd, i) => {
+                            return (
+                                <div key={i} className={`rounded-full w-10 h-10 text-center flex items-center justify-center cursor-pointer font-semibold ${selectedOdd == odd.value ? "bg-primary text-white border-2 border-white" : "bg-white text-black"}`} onClick={() => setSelectedOdd(odd.value)}>
+                                    {odd.value}x
+                                </div>
+                            )
+                        })
+                    }
                 </div>
 
-                <div className='flex text-white w-2/5 border-4 border-white p-3 gap-3 rounded-lg items-center justify-center mt-10'>
+                <div className='flex text-white w-2/5 border-4 border-white p-3 gap-3 rounded-2xl items-center justify-center'>
                     <p>Stake: </p>
                     <input type="number" className='w-full bg-transparent font-bold text-white  focus:outline-none' value={stake} onChange={(e) => { setStake(e.target.value);
                         if(e.target.value > balance || e.target.value <= 0){
@@ -199,19 +216,7 @@ const WheelGame = () => {
                     <p className='text-red-400 font-semibold text-[14px]'>Insufficient Balance</p>
                 }
 
-                <div className="grid grid-cols-4 gap-2 rounded-3xl my-5 p-3 bg-gray-700 border border-gray-100">
-                    {
-                        odds.map((odd, i) => {
-                            return (
-                                <div key={i} className={`rounded-full w-10 h-10 text-center flex items-center justify-center cursor-pointer font-semibold ${selectedOdd == odd.value ? "bg-primary text-white border-2 border-white" : "bg-white text-black"}`} onClick={() => setSelectedOdd(odd.value)}>
-                                    {odd.value}x
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-
-                <button className=' w-2/3 mb-20 big-button' onClick={handleSpinClick} disabled={Insufficient}>
+                <button className={`${!show ? "pulsate" : ""} w-2/3 mb-20 mt-5 big-button`} onClick={handleSpinClick} disabled={Insufficient}>
                     <span>Spin</span>
                 </button>
 
